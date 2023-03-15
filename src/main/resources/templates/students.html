@@ -11,6 +11,11 @@
 
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+		.table {
+			border-collapse: separate;
+			border-spacing: 0 0px;
+		}
 	</style>
 </head>
 
@@ -58,6 +63,13 @@
 					<td th:text="${student.studentFirstName}"></td>
 					<td th:text="${student.studentLastName}"></td>
 					<td th:text="${student.studentEmail}"></td>
+					<td>
+						<a th:href="@{/students/update/{id}(id=${student.studentId})}" class="btn btn-success btn-sm"
+							style="font-family: 'Roboto Mono', monospace;">Update</a>
+
+						<a th:href="@{/students/{id}(id=${student.studentId})}" class="btn btn-danger btn-sm"
+							style="font-family: 'Roboto Mono', monospace;">Remove</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
